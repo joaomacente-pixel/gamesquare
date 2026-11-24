@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GameSquare — seu diário de jogos. Avalie, descubra e compartilhe experiências.">
+  <title>GameSquare — seu diário de jogos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="side-label">MENU</div>
+    <nav>
+      <button class="nav-item active" data-screen="home"><span>⌂</span> Início</button>
+      <button class="nav-item" data-screen="profile"><span>◉</span> Meu perfil</button>
+      <button class="nav-item" data-screen="write"><span>＋</span> Nova review</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="mini-user"><div class="avatar">U</div><div><strong>usuariolindo</strong><small>Jogador da comunidade</small></div></div>
+      <div class="side-note">FEITO PARA QUEM AMA JOGAR <span>✦</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="mobile-brand">GAMESQUARE</div>
+      <div class="crumb">COMUNIDADE <span>/</span> <b id="page-label">INÍCIO</b></div>
+      <button class="top-write" data-go="write">＋ <span>Escrever review</span></button>
+    </header>
+
+    <section id="screen-home" class="screen active">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> SEU DIÁRIO DE JOGOS</div>
+          <h1>Todo jogo tem<br>uma <em>história.</em></h1>
+          <p>Registre suas experiências, descubra novos mundos e compartilhe suas opiniões com a comunidade.</p>
+          <button class="primary-btn" data-go="write">＋ Avaliar um jogo</button>
+        </div>
+        <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-controller">🎮</div><span class="spark s1">✦</span><span class="spark s2">✧</span><span class="hero-caption">PLAY · RATE · REPEAT</span></div>
+      </div>
+      <div class="section-heading"><div><div class="eyebrow">DA COMUNIDADE</div><h2>Reviews recentes</h2></div><span class="muted" id="review-count">0 PUBLICAÇÕES</span></div>
+      <div id="review-feed" class="review-feed"></div>
+    </section>
+
+    <section id="screen-profile" class="screen">
+      <div class="profile-banner">
+        <div class="profile-avatar">U</div>
+        <div><div class="eyebrow">PERFIL DE JOGADOR</div><h1>usuariolindo</h1><p class="muted">Colecionando histórias, uma partida de cada vez.</p></div>
+        <span class="profile-badge">✦ JOGADOR</span>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><span>REVIEWS</span><strong id="stat-reviews">0</strong><small>opiniões publicadas</small></div>
+        <div class="stat-card"><span>JOGOS AVALIADOS</span><strong id="stat-games">0</strong><small>mundos explorados</small></div>
+        <div class="stat-card"><span>MÉDIA DAS NOTAS</span><strong id="stat-average">—</strong><small>de 5 estrelas</small></div>
+      </div>
+      <div class="section-heading"><div><div class="eyebrow">SEU HISTÓRICO</div><h2>Minhas reviews</h2></div></div>
+      <div id="profile-reviews" class="review-feed"></div>
+    </section>
+
+    <section id="screen-write" class="screen">
+      <div class="write-header"><div class="eyebrow">COMPARTILHE SUA EXPERIÊNCIA</div><h1>Hora de <em>avaliar.</em></h1><p class="muted">Escolha um jogo, dê sua nota e conte o que achou.</p></div>
+      <form id="review-form" class="review-form">
+        <label for="game-select">QUAL JOGO VOCÊ JOGOU?</label>
+        <select id="game-select" required><option value="">Carregando jogos...</option></select>
+        <div id="selected-game" class="selected-game hidden"></div>
+        <label>SUA NOTA</label>
+        <div class="rating-picker" id="rating-picker">
+          <button type="button" data-rating="1" aria-label="1 estrela">★</button><button type="button" data-rating="2" aria-label="2 estrelas">★</button><button type="button" data-rating="3" aria-label="3 estrelas">★</button><button type="button" data-rating="4" aria-label="4 estrelas">★</button><button type="button" data-rating="5" aria-label="5 estrelas">★</button>
+          <span id="rating-label">Selecione de 1 a 5</span>
+        </div>
+        <label for="review-text">SUA REVIEW</label>
+        <textarea id="review-text" rows="6" maxlength="700" placeholder="O que fez esse jogo ser especial (ou não)? Conte para a comunidade..." required></textarea>
+        <div class="form-bottom"><span id="char-count">0 / 700</span><button class="primary-btn" type="submit">Publicar review ↗</button></div>
+        <div id="form-message" role="status"></div>
+      </form>
+      <p class="storage-note">Suas avaliações ficam salvas neste navegador. Nesta versão demonstrativa, elas não são sincronizadas com outros visitantes.</p>
+    </section>
+    <footer>GAMESQUARE <span>·</span> UM ESPAÇO PARA QUEM AMA JOGOS.</footer>
+  </main>
+</div>
+<script src="./assets/app.js"></script>
+</body>
+</html>

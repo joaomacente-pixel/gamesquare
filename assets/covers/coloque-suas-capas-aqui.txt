@@ -1,0 +1,1 @@
+Coloque suas imagens de capa nesta pasta. Os nomes esperados estão no README.md.
